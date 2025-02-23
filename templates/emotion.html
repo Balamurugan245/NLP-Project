@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://miro.medium.com/v2/resize:fit:1200/1*FwdFOQeQLMm0DB5UYsn8cA.png') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: flex-start; 
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding-left: 8%; 
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.5); 
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 600px;
+            height: 400px; 
+        }
+
+        h1 {
+            font-size: 35px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        textarea {
+            width: 100%;
+            height: 180px; 
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 18px;
+            resize: none;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 20px;
+            color: white;
+            background: #1097cc;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        h2 {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Emotion Analysis</h1>
+        <form method="POST">
+            <textarea name="text" placeholder="Enter text to detect emotion..." required></textarea><br>
+            <button type="submit">Detect Emotion</button>
+        </form>
+        {% if result is not none %}
+            <h2>Emotion: {{ result }}</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
